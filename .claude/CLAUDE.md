@@ -31,6 +31,12 @@ npm run lint       # ESLint 代码检查
 - 任务状态流转：`todo` → `inprogress` → `done`（通过 `cycleStatus(id)` 切换）
 - **部署到 GitHub Pages 的是 `index.html`，而非 React 构建产物**
 
+**多页面结构**（CSS `transform` 滑动切换，无路由库）：
+- `#page-home` — 主页（Today's Tasks）：日期选择器、筛选标签、任务列表、底部导航
+- `#page-add` — 新增项目页（Add Project）：Task Group 下拉、项目名、描述、起止日期、Logo 上传
+- 页面切换：`goToAddProject()` / `goBack()`；底部 FAB 加号按钮触发跳转
+- 提交表单后将新项目作为任务写入 `tasks` 数组并返回主页
+
 ## GitHub Pages
 
 仓库将 `main` 分支根目录的 `index.html` 部署至 `https://i015343.github.io/todo-app/`。
